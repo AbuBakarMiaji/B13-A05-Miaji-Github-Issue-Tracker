@@ -1,1 +1,202 @@
-<h1>Welcome</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home page</title>
+
+    <link rel="shortcut icon" href="./assets/github-logo.png" type="image/x-icon">
+
+    <!-- daisyui and tailwind CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Text font Linked -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Font awesome CDN connected -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <Style>
+        *{
+            font-family: "Geist", sans-serif;
+        }
+    </Style>
+</head>
+
+<body class="min-h-screen bg-[#F8FAFC] pb-14">
+
+    <!-- navigation bar -->
+    <nav class=" bg-white ">
+        <div class="flex justify-between max-w-7xl mx-auto p-5">
+            <div class="flex justify-center items-center gap-3">
+                <img class="h-9" src="./assets/github-logo.png" alt="">
+                <h2 class="text-[#1F2937] font-semibold text-xl">GitHub Issues Tracker</h2>
+            </div>
+
+            <div class="flex justify-center items-center gap-3">
+            <label class="input">
+                <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <g
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                    stroke-width="2.5"
+                    fill="none"
+                    stroke="currentColor"
+                    >
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.3-4.3"></path>
+                    </g>
+                </svg>
+                <input type="search" required placeholder="Search" />
+              </label>
+
+             <button class="btn btn-primary"> <i class="fa-regular fa-plus"></i>New Issue</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- button secction  -->
+        <Section class="max-w-6xl mx-auto bg-white mt-7 p-5 rounded-md shadow-sm">
+            <button class="btn px-10 ">All</button>
+            <button class="btn px-10">Open</button>
+            <button class="btn px-10">Close</button>
+        </Section>
+
+        <!-- issues section -->
+        <Section class="max-w-6xl mx-auto bg-white mt-7 p-5 rounded-t-md shadow-md flex justify-between">
+            <div class="flex justify-center items-center gap-3">
+                <div class="bg-slate-300 rounded-full ">
+                    <img src="./assets/Aperture.png" alt="">
+                </div>
+                <div>
+                    <h3 class="font-semibold text-[#1F2937]">50 Issues</h3>
+                    <p class="text-[#64748B]">Track and manage your project issues</p>
+                </div>
+            </div>
+
+            <div class="flex justify-center items-center gap-2">
+                <i class="fa-solid fa-circle text-[#00A96E]"></i> <p>Open</p>
+
+                <i class="fa-solid fa-circle text-[#A855F7]"></i> <p>Closed</p>
+            </div>
+        </Section>
+
+        <!-- Card Section -->
+         <section class=" bg-[#FBFBFB] max-w-6xl mx-auto  shadow-sm ">
+
+            <div class="p-5 grid grid-cols-4 gap-4">
+
+                <!-- single Card start-->
+                <div class="w-[250px]  bg-white rounded-md shadow-md border-t-5 border-[#00A96E]">
+                   <div class="px-4 py-2 shadow-md">
+                        <div class="flex justify-between mb-3">
+                            <img src="./assets/Open-Status.png" alt="">
+                            <p class="bg-[#FEECEC] text-[#EF4444] font-medium px-5 rounded-3xl">High</p>
+                        </div>
+
+                        <h2 class="text-[#1F2937] font-semibold text-[14px]">Fix navigation menu on mobile devices</h2>
+                        <p class="line-clamp-2 text-[#64748B] text-[12px]">The navigation menu doesn't collapse properly on mobile devices</p>
+
+                        <div class="flex gap-4 my-2">
+                            <div class="flex justify-center items-center gap-1 text-[12px] text-[#EF4444] font-medium bg-[#FECACA] py-1 px-3 rounded-xl"><i class="fa-solid fa-bug "></i> <p>Bug</p></div>
+                            <div class="flex justify-center items-center gap-1 text-[12px] text-[#D97706] font-medium bg-[#FDE68A] py-1 px-3 rounded-xl"><i class="fa-solid fa-life-ring"></i> <p>help wanted</p></div>
+                        </div>
+                   </div>
+
+                    <div class="bg-[#E4E4E7] px-4 py-2 text-[#64748B] text-[12px]">
+                            <p>#1 by john_doe</p>
+                            <p>1/15/2024</p>
+                    </div>
+
+                </div>
+                <!-- single Card end-->
+
+                <!-- single Card start-->
+                <div class="w-[250px]  bg-white rounded-md shadow-md border-t-5 border-[#00A96E]">
+                   <div class="px-4 py-2 shadow-md">
+                        <div class="flex justify-between mb-3">
+                            <img src="./assets/Open-Status.png" alt="">
+                            <p class="text-[#D97706] font-medium bg-[#FDE68A] px-5 rounded-3xl">Medium</p>
+                        </div>
+
+                        <h2 class="text-[#1F2937] font-semibold text-[14px]">Fix navigation menu on mobile devices</h2>
+                        <p class="line-clamp-2 text-[#64748B] text-[12px]">The navigation menu doesn't collapse properly on mobile devices</p>
+
+                        <div class="flex gap-4 my-2">
+                            <div class="flex justify-center items-center gap-1 text-[12px] text-[#EF4444] font-medium bg-[#FECACA] py-1 px-3 rounded-xl"><i class="fa-solid fa-bug "></i> <p>Bug</p></div>
+                            <div class="flex justify-center items-center gap-1 text-[12px] text-[#D97706] font-medium bg-[#FDE68A] py-1 px-3 rounded-xl"><i class="fa-solid fa-life-ring"></i> <p>help wanted</p></div>
+                        </div>
+                   </div>
+
+                    <div class="bg-[#E4E4E7] px-4 py-2 text-[#64748B] text-[12px]">
+                            <p>#1 by john_doe</p>
+                            <p>1/15/2024</p>
+                    </div>
+
+                </div>
+                <!-- single Card end-->
+                <!-- single Card start-->
+                <div class="w-[250px]  bg-white rounded-md shadow-md border-t-5 border-[#A855F7]">
+                   <div class="px-4 py-2 shadow-md">
+                        <div class="flex justify-between mb-3">
+                            <img src="./assets/Closed- Status .png" alt="">
+                            <p class="text-[#9CA3AF] font-medium bg-[#EEEFF2] px-5 rounded-3xl">Low</p>
+                        </div>
+
+                        <h2 class="text-[#1F2937] font-semibold text-[14px]">Fix navigation menu on mobile devices</h2>
+                        <p class="line-clamp-2 text-[#64748B] text-[12px]">The navigation menu doesn't collapse properly on mobile devices</p>
+
+                        <div class="flex gap-4 my-2">
+                            <div class="flex justify-center items-center gap-1 text-[12px] text-[#EF4444] font-medium bg-[#FECACA] py-1 px-3 rounded-xl"><i class="fa-solid fa-bug "></i> <p>Bug</p></div>
+                            <div class="flex justify-center items-center gap-1 text-[12px] text-[#D97706] font-medium bg-[#FDE68A] py-1 px-3 rounded-xl"><i class="fa-solid fa-life-ring"></i> <p>help wanted</p></div>
+                        </div>
+                   </div>
+
+                    <div class="bg-[#E4E4E7] px-4 py-2 text-[#64748B] text-[12px]">
+                            <p>#1 by john_doe</p>
+                            <p>1/15/2024</p>
+                    </div>
+
+                </div>
+                <!-- single Card end-->
+                <!-- single Card start-->
+                <div class="w-[250px]  bg-white rounded-md shadow-md border-t-5 border-[#A855F7]">
+                   <div class="px-4 py-2 shadow-md">
+                        <div class="flex justify-between mb-3">
+                            <img src="./assets/Closed- Status .png" alt="">
+                            <p class="text-[#9CA3AF] font-medium bg-[#EEEFF2] px-5 rounded-3xl">Low</p>
+                        </div>
+
+                        <h2 class="text-[#1F2937] font-semibold text-[14px]">Fix navigation menu on mobile devices</h2>
+                        <p class="line-clamp-2 text-[#64748B] text-[12px]">The navigation menu doesn't collapse properly on mobile devices</p>
+
+                        <div class="flex gap-4 my-2">
+                            <div class="flex justify-center items-center gap-1 text-[12px] text-[#00A96E] font-medium bg-[#BBF7D0] py-1 px-3 rounded-xl"><i class="fa-solid fa-wand-magic-sparkles"></i> <p>Enhancement</p></div>
+                            
+                        </div>
+                   </div>
+
+                    <div class="bg-[#E4E4E7] px-4 py-2 text-[#64748B] text-[12px]">
+                            <p>#1 by john_doe</p>
+                            <p>1/15/2024</p>
+                    </div>
+
+                </div>
+                <!-- single Card end-->
+               
+              
+
+
+            </div>
+
+         </section>
+
+    </main>
+    
+</body>
+</html>
