@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <link rel="shortcut icon" href="./assets/github-logo.png" type="image/x-icon">
+
+    <!-- daisyui and tailwind CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Text font Linked -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <Style>
+        *{
+            font-family: "Geist", sans-serif;
+        }
+    </Style>
+
+</head>
+<body class="min-h-screen bg-[#F8FAFC] py-6">
+    <section class="max-w-lg  mx-auto p-6  bg-white shadow rounded-md ">
+        <div class="flex flex-col justify-center items-center  ">
+            <img src="./assets/github-logo.png" alt="">
+            <h4 class=" text-[#1F2937] font-bold pt-3 text-2xl">GitHub Issues Tracker</h4>
+            <p class="text-[#64748B] text-sm">Sign in to manage your issues</p>
+        </div>
+
+       
+        <div class="flex flex-col justify-center items-center">
+                <fieldset class="fieldset  rounded-box mx-7 p-5  ">
+
+                <label class="label">Username</label>
+                <input id="user" type="text" class="input w-sm" placeholder="Username" />
+
+                <label class="label">Password</label>
+                <input id="pass" type="password" class="input w-sm" placeholder="Password"  />
+
+                <button id="btn-login" class="btn btn-primary mt-2">Submit</button>
+                </fieldset>
+        </div>
+
+        <div class="flex items-center my-4">
+            <hr class="flex-grow border-gray-300">
+            <span class="mx-3 text-gray-500 text-sm">OR</span>
+            <hr class="flex-grow border-gray-300">
+        </div>
+
+        <div class="flex flex-col justify-center items-center">
+            <h3 class="text-[#64748B] pb-4">Demo Credentials:</h3>
+            <h3> <b>Username:</b> admin</h3>
+            <h3> <b>Password:</b> admin123</h3>
+        </div>
+    
+    </section>
+
+
+    <script src="login.js"></script>
+</body>
+</html>
