@@ -82,7 +82,7 @@ buttons.forEach(button => {
 });
 
 
-
+// display all issues 
 function displayIssues(issues) {
 
     cardsContainer.innerHTML = "";
@@ -161,7 +161,7 @@ function displayIssues(issues) {
 }
 
 
-
+// modal data load 
 async function loadIssueDetails(id) {
 
     const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`);
