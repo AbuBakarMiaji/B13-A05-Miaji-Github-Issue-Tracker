@@ -37,7 +37,7 @@
             </div>
 
             <div class="flex justify-center items-center gap-3">
-            <label class="input">
+            <label  class="input">
                 <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <g
                     stroke-linejoin="round"
@@ -50,7 +50,7 @@
                     <path d="m21 21-4.3-4.3"></path>
                     </g>
                 </svg>
-                <input type="search" required placeholder="Search" />
+                <input id="searchInput" type="search" required placeholder="Search" />
               </label>
 
              <button class="btn btn-primary"> <i class="fa-regular fa-plus"></i>New Issue</button>
@@ -61,11 +61,12 @@
     <main>
 
         <!-- button secction  -->
-        <Section class="max-w-6xl mx-auto bg-white mt-7 p-5 rounded-md shadow-sm">
-            <button class="btn px-10 ">All</button>
-            <button class="btn px-10">Open</button>
-            <button class="btn px-10">Close</button>
+        <Section class="max-w-6xl mx-auto bg-white mt-7 p-5 rounded-md shadow-sm" >
+            <button id="allButton" class="btn-toggle btn px-10 btn-primary" data-type="all">All</button>
+            <button id="openButton" class=" btn-toggle btn px-10" data-type="open">Open</button>
+            <button id="closeButton" class=" btn-toggle btn px-10" data-type="close">Close</button>
         </Section>
+
 
         <!-- issues section -->
         <Section class="max-w-6xl mx-auto bg-white mt-7 p-5 rounded-t-md shadow-md flex justify-between">
@@ -74,7 +75,7 @@
                     <img src="./assets/Aperture.png" alt="">
                 </div>
                 <div>
-                    <h3 class="font-semibold text-[#1F2937]">50 Issues</h3>
+                    <h3  id="issueCount"class="font-semibold text-[#1F2937]">50 <span>Issues</span></h3>
                     <p class="text-[#64748B]">Track and manage your project issues</p>
                 </div>
             </div>
@@ -86,117 +87,62 @@
             </div>
         </Section>
 
+        <!-- loading spinner -->
+      <div id="loadingSpinner" class="h-[60vh] flex hidden justify-center items-center">
+          <span class="loading loading-dots loading-xl"></span>
+      </div>
+
         <!-- Card Section -->
          <section class=" bg-[#FBFBFB] max-w-6xl mx-auto  shadow-sm ">
 
-            <div class="p-5 grid grid-cols-4 gap-4">
-
-                <!-- single Card start-->
-                <div class="w-[250px]  bg-white rounded-md shadow-md border-t-5 border-[#00A96E]">
-                   <div class="px-4 py-2 shadow-md">
-                        <div class="flex justify-between mb-3">
-                            <img src="./assets/Open-Status.png" alt="">
-                            <p class="bg-[#FEECEC] text-[#EF4444] font-medium px-5 rounded-3xl">High</p>
-                        </div>
-
-                        <h2 class="text-[#1F2937] font-semibold text-[14px]">Fix navigation menu on mobile devices</h2>
-                        <p class="line-clamp-2 text-[#64748B] text-[12px]">The navigation menu doesn't collapse properly on mobile devices</p>
-
-                        <div class="flex gap-4 my-2">
-                            <div class="flex justify-center items-center gap-1 text-[12px] text-[#EF4444] font-medium bg-[#FECACA] py-1 px-3 rounded-xl"><i class="fa-solid fa-bug "></i> <p>Bug</p></div>
-                            <div class="flex justify-center items-center gap-1 text-[12px] text-[#D97706] font-medium bg-[#FDE68A] py-1 px-3 rounded-xl"><i class="fa-solid fa-life-ring"></i> <p>help wanted</p></div>
-                        </div>
-                   </div>
-
-                    <div class="bg-[#E4E4E7] px-4 py-2 text-[#64748B] text-[12px]">
-                            <p>#1 by john_doe</p>
-                            <p>1/15/2024</p>
-                    </div>
-
-                </div>
-                <!-- single Card end-->
-
-                <!-- single Card start-->
-                <div class="w-[250px]  bg-white rounded-md shadow-md border-t-5 border-[#00A96E]">
-                   <div class="px-4 py-2 shadow-md">
-                        <div class="flex justify-between mb-3">
-                            <img src="./assets/Open-Status.png" alt="">
-                            <p class="text-[#D97706] font-medium bg-[#FDE68A] px-5 rounded-3xl">Medium</p>
-                        </div>
-
-                        <h2 class="text-[#1F2937] font-semibold text-[14px]">Fix navigation menu on mobile devices</h2>
-                        <p class="line-clamp-2 text-[#64748B] text-[12px]">The navigation menu doesn't collapse properly on mobile devices</p>
-
-                        <div class="flex gap-4 my-2">
-                            <div class="flex justify-center items-center gap-1 text-[12px] text-[#EF4444] font-medium bg-[#FECACA] py-1 px-3 rounded-xl"><i class="fa-solid fa-bug "></i> <p>Bug</p></div>
-                            <div class="flex justify-center items-center gap-1 text-[12px] text-[#D97706] font-medium bg-[#FDE68A] py-1 px-3 rounded-xl"><i class="fa-solid fa-life-ring"></i> <p>help wanted</p></div>
-                        </div>
-                   </div>
-
-                    <div class="bg-[#E4E4E7] px-4 py-2 text-[#64748B] text-[12px]">
-                            <p>#1 by john_doe</p>
-                            <p>1/15/2024</p>
-                    </div>
-
-                </div>
-                <!-- single Card end-->
-                <!-- single Card start-->
-                <div class="w-[250px]  bg-white rounded-md shadow-md border-t-5 border-[#A855F7]">
-                   <div class="px-4 py-2 shadow-md">
-                        <div class="flex justify-between mb-3">
-                            <img src="./assets/Closed- Status .png" alt="">
-                            <p class="text-[#9CA3AF] font-medium bg-[#EEEFF2] px-5 rounded-3xl">Low</p>
-                        </div>
-
-                        <h2 class="text-[#1F2937] font-semibold text-[14px]">Fix navigation menu on mobile devices</h2>
-                        <p class="line-clamp-2 text-[#64748B] text-[12px]">The navigation menu doesn't collapse properly on mobile devices</p>
-
-                        <div class="flex gap-4 my-2">
-                            <div class="flex justify-center items-center gap-1 text-[12px] text-[#EF4444] font-medium bg-[#FECACA] py-1 px-3 rounded-xl"><i class="fa-solid fa-bug "></i> <p>Bug</p></div>
-                            <div class="flex justify-center items-center gap-1 text-[12px] text-[#D97706] font-medium bg-[#FDE68A] py-1 px-3 rounded-xl"><i class="fa-solid fa-life-ring"></i> <p>help wanted</p></div>
-                        </div>
-                   </div>
-
-                    <div class="bg-[#E4E4E7] px-4 py-2 text-[#64748B] text-[12px]">
-                            <p>#1 by john_doe</p>
-                            <p>1/15/2024</p>
-                    </div>
-
-                </div>
-                <!-- single Card end-->
-                <!-- single Card start-->
-                <div class="w-[250px]  bg-white rounded-md shadow-md border-t-5 border-[#A855F7]">
-                   <div class="px-4 py-2 shadow-md">
-                        <div class="flex justify-between mb-3">
-                            <img src="./assets/Closed- Status .png" alt="">
-                            <p class="text-[#9CA3AF] font-medium bg-[#EEEFF2] px-5 rounded-3xl">Low</p>
-                        </div>
-
-                        <h2 class="text-[#1F2937] font-semibold text-[14px]">Fix navigation menu on mobile devices</h2>
-                        <p class="line-clamp-2 text-[#64748B] text-[12px]">The navigation menu doesn't collapse properly on mobile devices</p>
-
-                        <div class="flex gap-4 my-2">
-                            <div class="flex justify-center items-center gap-1 text-[12px] text-[#00A96E] font-medium bg-[#BBF7D0] py-1 px-3 rounded-xl"><i class="fa-solid fa-wand-magic-sparkles"></i> <p>Enhancement</p></div>
-                            
-                        </div>
-                   </div>
-
-                    <div class="bg-[#E4E4E7] px-4 py-2 text-[#64748B] text-[12px]">
-                            <p>#1 by john_doe</p>
-                            <p>1/15/2024</p>
-                    </div>
-
-                </div>
-                <!-- single Card end-->
-               
-              
-
+            <div id="card-container" class="p-5 grid grid-cols-4 gap-4">
 
             </div>
 
          </section>
 
+
+          <!-- Open the modal using ID.showModal() method -->
+            <dialog id="issueModal" class="modal">
+                <div class="modal-box">
+
+                    <h3 id="modalTitle" class="font-bold text-lg"></h3>
+                    <div class="flex my-2 gap-4">
+                    <div class=""><p id="modalStatus" class="bg-[#00A96E] px-3  rounded-3xl"></p></div>
+                    
+                    <p id="modalAuthor" class="text-sm text-gray-400"></p>
+                    <p id="modalDate" class="text-sm text-gray-400"></p>
+                    </div>
+
+                    <div class="bg-yellow-200 px-3 my-4 rounded-3xl w-max">
+                    <p id="modalLabels" class=""> </p>
+                    </div>
+
+                    <p id="modalDescription" class="text-gray-500"></p>
+
+                    <hr class="my-2 opacity-30">
+
+                    <div class="flex justify-between items-center mt-4">
+                    <p id="assignee"></p>
+                    <p id="modalPriority" class="bg-red-500 text-white px-3 py-1 rounded-3xl"></p>
+                    </div>
+                    
+                    <div class="modal-action">
+                    <form method="dialog">
+                        <button class="btn">Close</button>
+                    </form>
+                    </div>
+
+            </div>
+            </dialog>
+
+            
+
+
     </main>
     
+
+    <!-- connect Js file  -->
+    <script src="./home.js"></script>
 </body>
 </html>
