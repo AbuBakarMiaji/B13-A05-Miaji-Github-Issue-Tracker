@@ -8,7 +8,8 @@ document.getElementById("btn-login").addEventListener("click",function(){
     const pass=passInput.value;
 
     if(user==="admin" && pass==="admin123"){
-        window.location.replace("/home.html");
+        window.location.assign("/home.html");
+
     }
 
     else{
